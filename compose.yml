@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    command: pnpm run build
+    volumes:
+      - .:/src/app:z
+      - npm_cache:/src/app/node_modules
+      - pnpm_home:/pnpm
+
+volumes:
+  npm_cache:
+  pnpm_home:
